@@ -12,4 +12,6 @@
     <string name="indication_accepted">Huella aceptada...bienvenido....</string>
     <string name="indication_error">Ha ocurrido in error</string>
 
+    <string name="inside_hint_message">Mensaje secreto</string>
+
 </resources>
