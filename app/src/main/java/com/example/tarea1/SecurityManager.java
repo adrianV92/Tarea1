@@ -20,7 +20,8 @@ public class SecurityManager {
     }
 
     public boolean prepareSecurityFinger() {
-        return fingerprintManager.isHardwareDetected() && fingerprintManager.hasEnrolledFingerprints();
+        hasFingerprintSecurity=fingerprintManager.isHardwareDetected() && fingerprintManager.hasEnrolledFingerprints();
+        return hasFingerprintSecurity;
     }
 
     public FingerprintManager getFingerprintManager() {

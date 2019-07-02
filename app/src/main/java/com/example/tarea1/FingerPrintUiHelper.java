@@ -15,6 +15,7 @@ public class FingerPrintUiHelper extends FingerprintManager.AuthenticationCallba
 
     private final ImageView ivFinger;
     private final TextView tvError;
+    private final TextView tvIndication;
     private final Callback callback;
     private CancellationSignal mCancellationSignal;
     private boolean mSelfCancelled;
@@ -25,9 +26,10 @@ public class FingerPrintUiHelper extends FingerprintManager.AuthenticationCallba
     private final int STATUS_ACCEPTED =2;
     private final int STATUS_ERROR =-1;
 
-    FingerPrintUiHelper(ImageView icon, TextView errorTextView, Callback callback) {
+    FingerPrintUiHelper(ImageView icon, TextView errorTextView, TextView indicationTextView, Callback callback) {
         this.ivFinger = icon;
         this.tvError = errorTextView;
+        this.tvIndication = indicationTextView;
         this.callback = callback;
         setStatusListener(STATUS_INACTIVE);
     }
@@ -107,24 +109,28 @@ public class FingerPrintUiHelper extends FingerprintManager.AuthenticationCallba
                         DrawableCompat.wrap(ivFinger.getDrawable()),
                         ContextCompat.getColor(ivFinger.getContext(), R.color.colorGrey)
                 );
+                tvIndication.setText(R.string.indication_inactive);
                 break;
             case STATUS_LISTENING:
                 DrawableCompat.setTint(
                         DrawableCompat.wrap(ivFinger.getDrawable()),
                         ContextCompat.getColor(ivFinger.getContext(), R.color.colorBlue)
                 );
+                tvIndication.setText(R.string.indication_listening);
                 break;
             case STATUS_ACCEPTED:
                 DrawableCompat.setTint(
                         DrawableCompat.wrap(ivFinger.getDrawable()),
                         ContextCompat.getColor(ivFinger.getContext(), R.color.colorGreen)
                 );
+                tvIndication.setText(R.string.indication_accepted);
                 break;
             case STATUS_ERROR:
                 DrawableCompat.setTint(
                         DrawableCompat.wrap(ivFinger.getDrawable()),
                         ContextCompat.getColor(ivFinger.getContext(), R.color.colorRed)
                 );
+                tvIndication.setText(R.string.indication_error);
                 break;
         }
         currentStatus=status;

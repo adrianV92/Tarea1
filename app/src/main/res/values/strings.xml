@@ -3,7 +3,13 @@
 
     <string name="fingerNotRecognized">No se ha podido reconocer su huella digital. Intente nuevamente</string>
 
-    <string name="welcomeInside">!!Has ingresado!! Tu huella fue reconocida</string>
+    <string name="welcomeInside">!!Has ingresado!! Tu huella fue reconocida.\nAhora ingresa tu mensaje secreto.</string>
     <string name="goOutside">Salir</string>
+
+
+    <string name="indication_inactive">La lectura de huellas se encuentra inactiva</string>
+    <string name="indication_listening">Por favor ingresa tu huella digital</string>
+    <string name="indication_accepted">Huella aceptada...bienvenido....</string>
+    <string name="indication_error">Ha ocurrido in error</string>
 
 </resources>

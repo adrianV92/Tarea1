@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity implements FingerPrintUiHelp
         SharedPreferences sharedPref = this.getSharedPreferences("com.tarea1.preference",Context.MODE_PRIVATE);
         ImageView ivFinger = findViewById(R.id.ivFingerPrint);
         TextView tvError = findViewById(R.id.tvError);
-        fingerPrintUiHelper = new FingerPrintUiHelper(ivFinger, tvError, this);
+        TextView tvIndication = findViewById(R.id.tvIndication);
+        fingerPrintUiHelper = new FingerPrintUiHelper(ivFinger, tvError, tvIndication ,this);
         int isIn=sharedPref.getInt("AUTENTICADO",0);
 
         if (isIn==1){
