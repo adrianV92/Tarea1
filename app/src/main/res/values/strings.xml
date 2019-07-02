@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tarea1</string>
+
+    <string name="fingerNotRecognized">No se ha podido reconocer su huella digital. Intente nuevamente</string>
+
+    <string name="welcomeInside">!!Has ingresado!! Tu huella fue reconocida</string>
+    <string name="goOutside">Salir</string>
+
+</resources>
