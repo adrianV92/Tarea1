@@ -32,15 +32,11 @@ public class MainActivity extends AppCompatActivity implements FingerPrintUiHelp
         fingerPrintUiHelper = new FingerPrintUiHelper(ivFinger, tvError, tvIndication ,this);
         int isIn=sharedPref.getInt("AUTENTICADO",0);
 
-        if (isIn==1){
-            goInside();
-        }else {
-            boolean isEnabletoUse = securityManager.prepareSecurityFinger();
-            if (!isEnabletoUse) {
+        boolean isEnabletoUse = securityManager.prepareSecurityFinger();
+        if (!isEnabletoUse) {
 
-            } else {
-                fingerPrintUiHelper.startListening(null);
-            }
+        } else {
+            fingerPrintUiHelper.startListening(null);
         }
     }
 
@@ -63,10 +59,6 @@ public class MainActivity extends AppCompatActivity implements FingerPrintUiHelp
 
     @Override
     public void onAuthenticated() {
-        SharedPreferences sharedPref = this.getSharedPreferences("com.tarea1.preference",Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("AUTENTICADO", 1);
-        editor.apply();
         goInside();
     }
 
